@@ -13,10 +13,10 @@ This library will save you a lot of trouble switching address sources!
 ## 📦 Install
 
 ```bash
-npm i -g nzm
-cnpm i -g nzm
-yarn add -g nzm
-pnpm add -g nzm
+npm i -g pro-nzm
+cnpm i -g pro-nzm
+yarn add -g pro-nzm
+pnpm add -g pro-nzm
 ```
 
 ## 🔨 Usage
