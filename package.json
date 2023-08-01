@@ -35,7 +35,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
-    "p": "standard-version",
+    "p": "standard-version -r",
     "c": "git checkout main & git push gitee main --tags & git push github main --tags",
     "push": "git checkout main & git push gitee main & git push github main"
   },
