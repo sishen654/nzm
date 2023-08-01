@@ -43,12 +43,8 @@ export default function help() {
           description: 'Only modify the cnpm download address source'
         },
         {
-          key: '--y2',
-          description: 'Only modify the yarn@2 and below versions download address source'
-        },
-        {
-          key: '--y3',
-          description: 'generate the address configuration file corresponding to Yarn3 and above'
+          key: '--y',
+          description: 'Only modify the yarn download address source'
         },
         {
           key: '--p',
