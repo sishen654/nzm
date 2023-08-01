@@ -1,4 +1,4 @@
-# nzm
+# pro-nzm
 
 [English](./README.md) | 简体中文
 
