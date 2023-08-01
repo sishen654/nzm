@@ -4,7 +4,7 @@
 
 ## ✨ 介绍
 
->   **Note**: 这个库的灵感来自于使用 [nrm](https://www.npmjs.com/package/nrm) 时只切换 npm 的问题https://www.npmjs.com/package/nrm)
+>   **Note**: 这个库的灵感来自于使用 [nrm](https://www.npmjs.com/package/nrm) 时只切换 npm 的问题
 
 **您可以使用此库来帮助npm、cnpm、yarn和pnpm快速切换下载地址源**。此外，你还可以指定单个或多个地址源进行切换。
 
