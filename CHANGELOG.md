@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/sishen654/nzm/compare/v1.2.0...v1.2.1) (2023-08-01)
+
+
+### Bug Fixes
+
+* pnpm is not downloaded but shows a problem ([58d520b](https://github.com/sishen654/nzm/commit/58d520b516cb76093a43b3461244e4749c0654de))
+
+
+### Others
+
+* update script ([ce49c9b](https://github.com/sishen654/nzm/commit/ce49c9ba61720c53be46bf3a9c79b1c0f40fd937))
+
 ## [1.2.0](https://github.com/sishen654/nzm/compare/v1.1.0...v1.2.0) (2023-08-01)
 
 
