@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/sishen654/nzm/compare/v1.1.0...v1.2.0) (2023-08-01)
+
+
+### Features
+
+* add unit test ([40df411](https://github.com/sishen654/nzm/commit/40df4119b5d3351029bdef34effe4e11c2ff6831))
+
 ## 1.1.0 (2023-08-01)
 
 
