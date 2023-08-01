@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "author": "sishen",
   "license": "MIT",
-  "description": "CLI to some JavaScript string utilities",
-  "keywords": [],
+  "description": "Next generation package manager download address source management tool",
+  "keywords": [
+    "npm",
+    "yarn",
+    "cnpm",
+    "pnpm",
+    "registry"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "repository": "",
-  "homepage": "",
-  "bugs": "",
+  "repository": "https://github.com/sishen654/nzm",
+  "homepage": "https://github.com/sishen654/nzm",
+  "bugs": "https://github.com/sishen654/nzm/issues",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
