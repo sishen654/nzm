@@ -1,37 +1,51 @@
-# create-temp
+# nzm
 
-#### 介绍s
-创建常用模板脚手架
+English | [简体中文](./README-zh.md)
 
-#### 软件架构
-软件架构说明
+## ✨ Introduce
 
+>   **Note**: The inspiration for this library comes from the problem of only switching npm when using [nrm](https://www.npmjs.com/package/nrm)
 
-#### 安装教程
+**You can use this library to help npm, cnpm, yarn and pnpm quickly switch download address sources**. Also, you can specify single or multiple address sources for switching.
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+This library will save you a lot of trouble switching address sources!
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 📦 Install
+
+```bash
+npm i -g nzm
+cnpm i -g nzm
+yarn add -g nzm 
+pnpm add -g nzm
+```
+
+
+
+## 🔨 Usage
+
+You can use `nzm -h` to check all command list：
+
+![image-20230801113412830](assets/README.assets/image-20230801113412830.png)
+
+You can use `nzm ls` to check all address list：
+
+![ls](assets/README.assets/ls.gif)
+
+You can use `nzm use <name>` to switch address source:
+
+>   Default Switch All, with the same effect as using `nzm use <name> --all`
+
+![use](assets/README.assets/use.gif)
+
+You can also specify the packet manager to switch address sources, use `nzm use <url> [extend]`:
+
+![extend](assets/README.assets/extend.gif)
+
+
+
+
+
+
+
