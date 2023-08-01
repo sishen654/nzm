@@ -23,7 +23,7 @@ function init() {
         break;
       case 'add':
         if (!isDef(name) || !isDef(url)) throwError("Please input correct argument")
-        if (!checkUrl(url)) throwError("Please input correct url")
+        if (!checkUrl(url)) throwError("Please input correct url, the url must start with http or https")
         add(name, url)
         break;
       case 'del':
