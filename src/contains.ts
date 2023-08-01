@@ -20,12 +20,15 @@ export const manager = {
 export type Type = keyof typeof manager
 
 export function rewriteRegistry(type: Type, url: string, name: string) {
+  // 1 检测是否下载该包管理器
+  // let { stdout } = runSync([`${type} -v`])
+  // if (stdout.length === 0) return;
   const PATH = manager[type]
-  // 1 确保文件存在
+  // 2 确保文件存在
   ensureFile(PATH)
   let data = fs.readFileSync(PATH, { encoding: 'utf8' })
   let registry = createObjFromFile(data)['registry']
-  // 2 重写文件
+  // 3 重写文件
   try {
     if (registry) {
       fs.writeFileSync(PATH, data.replace(`registry=${registry}`, `registry=${url}`))
@@ -34,7 +37,7 @@ export function rewriteRegistry(type: Type, url: string, name: string) {
     }
     console.log(`${chalk.success('SUCCESS')}: The ${chalk.warn(type)} registry has been changed to '${chalk.info(name)}'.`);
   }
-  // 3 错误恢复原样
+  // 4 错误恢复原样
   catch (error) {
     fs.writeFileSync(PATH, data)
     console.log(`${chalk.error('ERROR')}: The ${chalk.warn(type)} registry '${chalk.info(name)}' is not found.`);
@@ -43,10 +46,13 @@ export function rewriteRegistry(type: Type, url: string, name: string) {
 
 export function rewritePnpmRegistry(url: string, name: string) {
   try {
+    let { stdout } = runSync([`pnpm -v`])
+    if (stdout.length === 0) { return }
     runSync([`pnpm set registry ${url}`])
     console.log(`${chalk.success('SUCCESS')}: The ${chalk.warn('pnpm')} registry has been changed to '${chalk.info(name)}'.`);
   } catch (error) {
     // 未安装 pnpm
+    console.log(error);
   }
 }
 
