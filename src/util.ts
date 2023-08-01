@@ -67,7 +67,7 @@ export function throwError(msg: string) {
 }
 
 
-export function handlerError(err: Error, tips: string[]) {
+export function handlerError(err: Error, tips: string[] = []) {
   err.message && console.log(`${chalk.error('ERROR')}: ${err.message}`);
   tips.forEach(tip => console.log(tip))
   console.log(chalk.warn('UNHANDLER ERROR! 🐱 Shuting dow...'));

@@ -13,6 +13,7 @@ function init() {
     ensureOptions()
     let name = args[1]
     let url = args[2]
+    let extend = args.slice(2)
     switch (args[0]) {
       case '-h':
         help()
@@ -35,7 +36,7 @@ function init() {
         break;
       case 'use':
         if (!isDef(name)) throwError("Please input correct name")
-        use(name, url)
+        use(name, extend)
         break;
       case undefined:
         throwError('')
