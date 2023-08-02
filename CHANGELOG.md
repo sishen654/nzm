@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/sishen654/pro-nzm/compare/v1.2.1...v1.2.2) (2023-08-02)
+
+
+### Others
+
+* update package info ([03d3445](https://github.com/sishen654/pro-nzm/commit/03d3445e4873de46edbb1b053bba69fe030e93ea))
+
 ### [1.2.1](https://github.com/sishen654/nzm/compare/v1.2.0...v1.2.1) (2023-08-01)
 
 
