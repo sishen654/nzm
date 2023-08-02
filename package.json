@@ -14,9 +14,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/sishen654/nzm",
-  "homepage": "https://github.com/sishen654/nzm",
-  "bugs": "https://github.com/sishen654/nzm/issues",
+  "repository": "https://github.com/sishen654/pro-nzm",
+  "homepage": "https://github.com/sishen654/pro-nzm",
+  "bugs": "https://github.com/sishen654/pro-nzm/issues",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
