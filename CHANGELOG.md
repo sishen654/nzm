@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/sishen654/pro-nzm/compare/v1.2.2...v1.2.3) (2023-08-03)
+
+
+### Bug Fixes
+
+* add uninstall yarn case show tip ([ee2aacf](https://github.com/sishen654/pro-nzm/commit/ee2aacf6d18f2a20e66fde359f38284d41946766))
+
 ### [1.2.2](https://github.com/sishen654/pro-nzm/compare/v1.2.1...v1.2.2) (2023-08-02)
 
 
