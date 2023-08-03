@@ -59,6 +59,7 @@ export function rewritePnpmRegistry(url: string, name: string) {
 export function rewriteYarnRegistry(url: string, name: string) {
   try {
     let { stdout } = runSync([`yarn -v`])
+    if (stdout.length === 0) return;
     let X = Number(stdout[0])
     if (X <= 1) rewriteYarn1Registry(url, name)
     else rewriteYarn2Registry(url, name)
