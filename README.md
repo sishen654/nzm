@@ -10,6 +10,8 @@ English | [简体中文](./README-zh.md)
 
 This library will save you a lot of trouble switching address sources!
 
+
+
 ## 📦 Install
 
 ```bash
@@ -19,7 +21,13 @@ yarn add -g pro-nzm
 pnpm add -g pro-nzm
 ```
 
+
+
 ## 🔨 Usage
+
+You can use `nzm add [name] [url]` add new address source:
+
+![add](assets/README.assets/add.gif)
 
 You can use `nzm -h` to check all command list：
 

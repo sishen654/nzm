@@ -25,6 +25,10 @@ pnpm add -g pro-nzm
 
 ## 🔨 使用
 
+你可以使用 `nzm add [name] [url]` 去添加你的新的地址源：
+
+![add](assets/README-zh.assets/add.gif)
+
 你可以使用 `nzm -h` 来查看所有命令列表：
 
 ![image-20230801113412830](assets/README-zh.assets/image-20230801113412830.png)
