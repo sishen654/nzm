@@ -1,6 +1,7 @@
 import { execaCommandSync } from 'execa'
 import fs from "node:fs"
 import type { ExecaSyncReturnValue, SyncOptions, ExecaSyncError } from 'execa'
+import { execSync } from "node:child_process"
 
 // 1) 文件相关
 export function fileIsExits(path: string) {
@@ -30,7 +31,12 @@ export function readJsonSync(path: string) {
   }
 }
 
-export function runSync(args: string[], options: SyncOptions = {}): ExecaSyncReturnValue | ExecaSyncError {
+export function runSync(args: string[]) {
+  let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
+  // 需要减去左后一个换行
+  return stdout.substring(0, stdout.length - 1)
+}
+export function cliRun(args: string[], options: SyncOptions = {}): ExecaSyncReturnValue | ExecaSyncError {
   try {
     return execaCommandSync(`${args.join(' ')}`, options)
   } catch (error) {
