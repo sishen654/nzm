@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/sishen654/pro-nzm/compare/v1.2.4...v1.3.0) (2023-08-05)
+
+
+### Features
+
+* achieving zero deps execution ([7abacd0](https://github.com/sishen654/pro-nzm/commit/7abacd04b85753f92a51a9c5213054fdbd540315))
+
+
+### Others
+
+* add git standard ([c0e0e88](https://github.com/sishen654/pro-nzm/commit/c0e0e88b587d8156eca96bbda032e109ccdcba95))
+* update script ([0a103d9](https://github.com/sishen654/pro-nzm/commit/0a103d9239b0f7e0e438ef636892149abc2478a2))
+
 ### [1.2.4](https://github.com/sishen654/pro-nzm/compare/v1.2.3...v1.2.4) (2023-08-03)
 
 
