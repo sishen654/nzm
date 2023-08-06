@@ -1,8 +1,7 @@
-import { cliRun } from "@src/util";
+import { runSync } from "@src/util";
 
-const run = (command: string, options?: any) => {
-  let { stdout } = cliRun([command], options);
-  return stdout
+const run = (command: string) => {
+  return runSync([command]);
 }
 const npm = "npm get registry"
 const cnpm = "cnpm get registry"
@@ -19,11 +18,11 @@ const defaultOptions = {
 describe("nzm cli", () => {
   describe("Common command", () => {
     it("Help command output font length of more than 1000", () => {
-      let { stdout } = cliRun(["nzm -h"])
+      let stdout = run("nzm -h")
       expect(stdout.length).toBeGreaterThan(1000)
     })
     it("Chekc address list", () => {
-      let { stdout } = cliRun(["nzm ls"])
+      let stdout = run("nzm ls")
       expect(stdout.includes('npm')).toBeTruthy()
       expect(stdout.includes('tencent')).toBeTruthy()
       expect(stdout.includes('cnpm')).toBeTruthy()
@@ -33,56 +32,53 @@ describe("nzm cli", () => {
 
   describe("Add address", () => {
     it("Add new address with http url", () => {
-      let { stdout: add } = cliRun(["nzm add test http://demo.com"])
+      let add = run("nzm add test http://demo.com")
       expect(add.includes('SUCCESS')).toBeTruthy()
-      let { stdout: list } = cliRun(["nzm ls"])
+      let list = run("nzm ls")
       expect(list.includes('test')).toBeTruthy()
-      let { stdout: del } = cliRun(["nzm del test"])
+      let del = run("nzm del test")
       expect(del.includes('SUCCESS')).toBeTruthy()
     })
     it("Add new address with https url", () => {
-      let { stdout: add } = cliRun(["nzm add test https://demo.com"])
+      let add = run("nzm add test https://demo.com")
       expect(add.includes('SUCCESS')).toBeTruthy()
-      let { stdout: list } = cliRun(["nzm ls"])
+      let list = run("nzm ls")
       expect(list.includes('test')).toBeTruthy()
-      let { stdout: del } = cliRun(["nzm del test"])
+      let del = run("nzm del test")
       expect(del.includes('SUCCESS')).toBeTruthy()
     })
     it("Use error url to add new address", () => {
-      let { stdout: add1 } = cliRun(["nzm add error 123"])
-      expect(add1.includes('ERROR')).toBeTruthy()
-      let { stdout: add2 } = cliRun(["nzm add error abc"])
-      expect(add2.includes('ERROR')).toBeTruthy()
-      let { stdout: add3 } = cliRun(["nzm add error .//."])
-      expect(add3.includes('ERROR')).toBeTruthy()
+      expect(() => run("nzm add error 123")).toThrowError()
+      expect(() => run("nzm add error abc")).toThrowError()
+      expect(() => run("nzm add error .//.")).toThrowError()
     })
   })
 
   describe("Modify name", () => {
     it("Modify address based on existing name", () => {
-      cliRun(["nzm add test https://demo.com"])
-      cliRun(["nzm rename test change-abc"])
-      let { stdout } = cliRun(["nzm ls"])
+      run("nzm add test https://demo.com")
+      run("nzm rename test change-abc")
+      let stdout = run("nzm ls")
       expect(stdout.includes('test')).toBeFalsy()
       expect(stdout.includes('change-abc')).toBeTruthy()
-      cliRun(["nzm del change-abc"])
+      run("nzm del change-abc")
     })
     it("Modify address based on not existing name", () => {
-      let { stdout } = cliRun(["nzm rename testtest change-abc"])
+      let stdout = run("nzm rename testtest change-abc")
       expect(stdout.includes('WARN')).toBeTruthy()
     })
   })
 
   describe("Delete name", () => {
     it("Delete address based on existing name", () => {
-      cliRun(["nzm add test https://demo.com"])
-      let { stdout } = cliRun(["nzm del test"])
+      run("nzm add test https://demo.com")
+      let stdout = run("nzm del test")
       expect(stdout.includes('SUCCESS')).toBeTruthy()
-      let { stdout: ls } = cliRun(["nzm ls"])
+      let ls = run("nzm ls")
       expect(ls.includes('test')).toBeFalsy()
     })
     it("Delete address based on not existing name", () => {
-      let { stdout } = cliRun(["nzm del testtest"])
+      let stdout = run("nzm del testtest")
       expect(stdout.includes('WARN')).toBeTruthy()
     })
   })
