@@ -33,7 +33,6 @@ export function readJsonSync(path: string) {
 
 export function runSync(args: string[]) {
   let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
-  // 需要减去左后一个换行
   return stdout.substring(0, stdout.length - 1)
 }
 export function cliRun(args: string[], options: SyncOptions = {}): ExecaSyncReturnValue | ExecaSyncError {

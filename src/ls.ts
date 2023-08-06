@@ -1,4 +1,4 @@
-import { chalk, readJsonSync } from "./util"
+import { chalk } from "./util"
 import { getRegistry, getOptions } from "./contains"
 
 export default function ls() {

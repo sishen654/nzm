@@ -1,4 +1,4 @@
-import { chalk, readJsonSync, writeJsonSync } from "./util"
+import { chalk, writeJsonSync } from "./util"
 import { NZMRC, getOptions } from "./contains"
 
 export default function rename(name: string, newName: string) {
