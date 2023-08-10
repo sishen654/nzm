@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/sishen654/pro-nzm/compare/v1.3.0...v1.3.2) (2023-08-10)
+
+
+### Bug Fixes
+
+* .npmrc config not exits compatible ([f1f2c4d](https://github.com/sishen654/pro-nzm/commit/f1f2c4d5055f8a0d542f49c6f99126703b3f67dc))
+* uninstall yarn or pnpm not throw error ([2639d2a](https://github.com/sishen654/pro-nzm/commit/2639d2aade220eae9ae637446e0d05fcd5e7400d))
+
+
+### Build System
+
+* refactor rollup config file ([58e6528](https://github.com/sishen654/pro-nzm/commit/58e65286e13f43348b926dd9a95536c9b3dcce10))
+
+
+### Tests
+
+* update unit test ([cb0ca42](https://github.com/sishen654/pro-nzm/commit/cb0ca4285061d90d25a5d9371e28aeef9a939558))
+
+
+### Update info
+
+* add init option ([8e23a7f](https://github.com/sishen654/pro-nzm/commit/8e23a7f356f55f313950b1f8c7081e5bf59df075))
+
+
+### Others
+
+* fix import question ([a854f22](https://github.com/sishen654/pro-nzm/commit/a854f22f3b09cda824fe17390ca1458b7f99076a))
+* remove unuse import ([d633b4f](https://github.com/sishen654/pro-nzm/commit/d633b4f7fe54435f91b2daf61fcf06731b03e97f))
+* windows img compatible ([77bdd56](https://github.com/sishen654/pro-nzm/commit/77bdd565d074343fc871b65689e1295874edbc73))
+
 ## [1.3.0](https://github.com/sishen654/pro-nzm/compare/v1.2.4...v1.3.0) (2023-08-05)
 
 
