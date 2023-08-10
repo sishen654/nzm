@@ -1,7 +1,7 @@
 import { execaCommandSync } from 'execa'
 import fs from "node:fs"
 import type { ExecaSyncReturnValue, SyncOptions, ExecaSyncError } from 'execa'
-import { execSync } from "node:child_process"
+import { execSync, spawnSync } from "node:child_process"
 
 // 1) 文件相关
 export function fileIsExits(path: string) {
@@ -32,8 +32,12 @@ export function readJsonSync(path: string) {
 }
 
 export function runSync(args: string[]) {
-  let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
-  return stdout.substring(0, stdout.length - 1)
+  try {
+    let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
+    return stdout.substring(0, stdout.length - 1)
+  } catch (error) {
+    return ""
+  }
 }
 export function cliRun(args: string[], options: SyncOptions = {}): ExecaSyncReturnValue | ExecaSyncError {
   try {

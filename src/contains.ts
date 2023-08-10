@@ -1,6 +1,6 @@
 import path from "node:path"
 import fs from "node:fs"
-import { runSync, chalk, createObjFromFile, ensureFile, readJsonSync } from "./util"
+import { cliRun, chalk, createObjFromFile, ensureFile, readJsonSync } from "./util"
 
 export const NZMRC = path.join(process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'] as string, '.nzmrc.json');
 export const NPMRC = path.join(process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'] as string, '.npmrc');
@@ -21,7 +21,7 @@ export type Type = keyof typeof manager
 
 export function rewriteRegistry(type: Type, url: string, name: string) {
   // 1 检测是否下载该包管理器
-  // let { stdout } = runSync([`${type} -v`])
+  // let { stdout } = cliRun([`${type} -v`])
   // if (stdout.length === 0) return;
   const PATH = manager[type]
   // 2 确保文件存在
@@ -46,9 +46,9 @@ export function rewriteRegistry(type: Type, url: string, name: string) {
 
 export function rewritePnpmRegistry(url: string, name: string) {
   try {
-    let stdout = runSync([`pnpm -v`])
+    let { stdout } = cliRun([`pnpm -v`])
     if (stdout.length === 0) { return }
-    runSync([`pnpm set registry ${url}`])
+    cliRun([`pnpm set registry ${url}`])
     console.log(`${chalk.success('SUCCESS')}: The ${chalk.warn('pnpm')} registry has been changed to '${chalk.info(name)}'.`);
   } catch (error) {
     // 未安装 pnpm
@@ -58,7 +58,7 @@ export function rewritePnpmRegistry(url: string, name: string) {
 
 export function rewriteYarnRegistry(url: string, name: string) {
   try {
-    let stdout = runSync([`yarn -v`])
+    let { stdout } = cliRun([`yarn -v`])
     if (stdout.length === 0) return;
     let X = Number(stdout[0])
     if (X <= 1) rewriteYarn1Registry(url, name)
@@ -70,7 +70,7 @@ export function rewriteYarnRegistry(url: string, name: string) {
 
 export function rewriteYarn1Registry(url: string, name: string) {
   try {
-    let stdout = runSync([`yarn config set registry ${url}`])
+    let { stdout } = cliRun([`yarn config set registry ${url}`])
     if (stdout.includes('Error')) {
       console.log(`${chalk.error('ERROR')}: The ${chalk.warn('yarn')} registry changed fail`);
       return
@@ -83,7 +83,7 @@ export function rewriteYarn1Registry(url: string, name: string) {
 
 export function rewriteYarn2Registry(url: string, name: string) {
   try {
-    let stdout = runSync([`yarn config set --home npmRegistryServer ${url}`])
+    let { stdout } = cliRun([`yarn config set --home npmRegistryServer ${url}`])
     if (stdout.includes('Error')) {
       console.log(`${chalk.error('ERROR')}: The ${chalk.warn('yarn')} registry changed fail`);
       return
@@ -91,9 +91,8 @@ export function rewriteYarn2Registry(url: string, name: string) {
     // ! yarn@2版本以上（非 https 需要添加白名单），检验全局添加无效
     if (!url.startsWith('https')) {
       let urlObj = new URL(url)
-      let stdout = runSync([`yarn config set --home unsafeHttpWhitelist ${urlObj.host}`])
-      console.log(stdout);
-      if (stdout.includes('Error')) {
+      let { stdout: seiStdout } = cliRun([`yarn config set --home unsafeHttpWhitelist ${urlObj.host}`])
+      if (seiStdout.includes('Error')) {
         console.log(`${chalk.error('ERROR')}: The ${chalk.warn('yarn')} due to your address not being https, adding a whitelist failed. Please use this command:\n`);
         console.log(`              ${chalk.info('yarn config set --home unsafeHttpWhitelist <url>')} \n`);
         console.log("       to manually add it");
