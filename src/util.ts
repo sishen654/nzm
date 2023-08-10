@@ -32,12 +32,8 @@ export function readJsonSync(path: string) {
 }
 
 export function runSync(args: string[]) {
-  try {
-    let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
-    return stdout.substring(0, stdout.length - 1)
-  } catch (error) {
-    return ""
-  }
+  let stdout = execSync(`${args.join(' ')}`).toString('utf-8')
+  return stdout.substring(0, stdout.length - 1)
 }
 export function cliRun(args: string[], options: SyncOptions = {}): ExecaSyncReturnValue | ExecaSyncError {
   try {
