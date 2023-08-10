@@ -6,7 +6,8 @@ export default function ls() {
   const options = getOptions()
   const keys = Object.keys(options)
   const max = Math.max(...keys.map(v => Number(v.length)))
-  const current = getRegistry()
+  // .npmrc 中不存在配置地址源，即为默认情况
+  const current = getRegistry() || "https://registry.npmjs.org/"
   const currentExit = Object.values(options).includes(current)
   keys.forEach(key => {
     console.log(`${current === options[key] ? chalk.success('*') : ' '} ${key} ${'-'.repeat(max - key.length + 8)} ${options[key]}`);

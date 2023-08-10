@@ -1,9 +1,10 @@
 import { fileIsExits, ensureFile, writeJsonSync } from "./util"
-import { NZMRC } from "./contains"
+import { NZMRC, NPMRC } from "./contains"
 
 export default function ensureOptions() {
   if (!fileIsExits(NZMRC)) {
     ensureFile(NZMRC)
+    ensureFile(NPMRC)
     const defaultOptions = {
       npm: "https://registry.npmjs.org/",
       tencent: "https://mirrors.cloud.tencent.com/npm/",
