@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4](https://github.com/sishen654/pro-nzm/compare/v1.3.3...v1.3.4) (2023-08-14)
+
+
+### Bug Fixes
+
+* fix img show error ([e8d2e6b](https://github.com/sishen654/pro-nzm/commit/e8d2e6b7a14bab60e3a2485bc59eaee3e4942e89))
+
+
+### Others
+
+* not caught error ([d9f0e1d](https://github.com/sishen654/pro-nzm/commit/d9f0e1da21da0b55cebb5f5d382f1073122c4b17))
+
+
+### Update info
+
+* update endline rule ([c13a96f](https://github.com/sishen654/pro-nzm/commit/c13a96f7c7a0fbaf6f3bba3462bae8532cb2743c))
+
 ### [1.3.3](https://github.com/sishen654/pro-nzm/compare/v1.3.2...v1.3.3) (2023-08-10)
 
 ### [1.3.2](https://github.com/sishen654/pro-nzm/compare/v1.3.0...v1.3.2) (2023-08-10)
