@@ -31,7 +31,7 @@ pnpm add -g pro-nzm
 
 你可以使用 `nzm -h` 来查看所有命令列表：
 
-![image-20230801113412830](assets/README-zh.assets/image-20230801113412830.png)
+![image-20230814155518498](assets/README-zh.assets/image-20230814155518498.png)
 
 你可以使用 `nzm ls` 来查看所有地址列表：
 

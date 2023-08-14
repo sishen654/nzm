@@ -31,7 +31,7 @@ You can use `nzm add [name] [url]` add new address source:
 
 You can use `nzm -h` to check all command list：
 
-![image-20230801113412830](assets/README.assets/image-20230801113412830.png)
+![image-20230814155511899](assets/README.assets/image-20230814155511899.png)
 
 You can use `nzm ls` to check all address list：
 
