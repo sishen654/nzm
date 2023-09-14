@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/sishen654/pro-nzm/compare/v1.3.4...v1.3.5) (2023-09-14)
+
+
+### Bug Fixes
+
+* add deps ([ec64683](https://github.com/sishen654/pro-nzm/commit/ec646836541716d8863f1e383415277b79dc838d))
+
 ### [1.3.4](https://github.com/sishen654/pro-nzm/compare/v1.3.3...v1.3.4) (2023-08-14)
 
 
